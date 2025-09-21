@@ -9,8 +9,8 @@ import pdf from 'astro-pdf';
 import markdoc from '@astrojs/markdoc';
 
 export default defineConfig({
-  site: 'https://thekaasking.github.io',
-  base: '/pages',
+  site: 'https://www.razovanberkel.nl',
+  base: '/',
   output: 'static',
   integrations: [mdx(), sitemap(), pdf({pages: {'/test': 'test.pdf'}}), markdoc()],
 });
