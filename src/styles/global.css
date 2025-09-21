@@ -21,12 +21,27 @@
 }
 
 /* ------ THEMING - Dark Mode ------ */
-[data-theme="dark"],
+[data-theme="dark"] {
+    --palette-primary: #20bdff;
+
+    --text: #d4d4d8;
+    --text-muted: #d2d3d7;
+    --text-heading: #fafafa;
+    --text-link: #20bdff;
+
+    --code-text: #cbd5e0;
+    --code-background: #1f2631;
+    --code-border: #2d3748;
+
+    --border: #2d3748;
+    --background: #18181b;
+}
+
+/* Fallback to system preference only when no manual theme is set */
 @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
+    :root:not([data-theme]) {
         --palette-primary: #20bdff;
 
-        --text: #d2d3d7;
         --text: #d4d4d8;
         --text-muted: #d2d3d7;
         --text-heading: #fafafa;
@@ -41,9 +56,12 @@
     }
 }
 
-[data-theme="dark"] html,
+[data-theme="dark"] html {
+    color-scheme: dark;
+}
+
 @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) html {
+    :root:not([data-theme]) html {
         color-scheme: dark;
     }
 }
