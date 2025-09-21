@@ -1,15 +1,14 @@
 import js from '@eslint/js';
-import { defineConfig } from 'eslint-define-config';
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsparser from '@typescript-eslint/parser';
 import astro from 'eslint-plugin-astro';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 
-export default defineConfig([
+export default [
   js.configs.recommended,
   ...astro.configs.recommended,
   {
-    files: ['**/*.{js,mjs,cjs,ts,tsx,astro}'],
+    files: ['**/*.{js,mjs,cjs,ts,tsx}'],
     languageOptions: {
       parser: tsparser,
       parserOptions: {
@@ -50,13 +49,6 @@ export default defineConfig([
   },
   {
     files: ['**/*.astro'],
-    languageOptions: {
-      parser: astro.configs.recommended.parser,
-      parserOptions: {
-        parser: tsparser,
-        extraFileExtensions: ['.astro'],
-      },
-    },
     rules: {
       // Astro-specific rules
       'astro/no-conflict-set-directives': 'error',
@@ -80,4 +72,4 @@ export default defineConfig([
       'public/**',
     ],
   },
-]);
+];
