@@ -11,6 +11,10 @@ export default [
     files: ['**/*.{js,mjs,cjs,ts,tsx}'],
     languageOptions: {
       parser: tsparser,
+      globals: {
+        URL: 'readonly',
+        console: 'readonly',
+      },
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
@@ -49,6 +53,11 @@ export default [
   },
   {
     files: ['**/*.astro'],
+    languageOptions: {
+      globals: {
+        astroHTML: 'readonly',
+      },
+    },
     rules: {
       // Astro-specific rules
       'astro/no-conflict-set-directives': 'error',

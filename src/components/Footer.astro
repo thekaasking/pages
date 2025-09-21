@@ -1,28 +1,24 @@
 ---
-const today = new Date();
 ---
 
 <footer>
-	&copy; {today.getFullYear()} Razo van Berkel. All rights reserved.
+  <div>
+    This blog is built with 
+    <a class="animated" href={"https://github.com/flexdinesh/blogster"} target="_blank"> Blogster</a> 
+    and hosted in
+    <a class="animated" href={"https://www.netlify.com"}> Netlify</a>.
+  </div>
 </footer>
+
 <style>
-	footer {
-		padding: 2em 1em 6em 1em;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
-		text-align: center;
-	}
-	.social-links {
-		display: flex;
-		justify-content: center;
-		gap: 1em;
-		margin-top: 1em;
-	}
-	.social-links a {
-		text-decoration: none;
-		color: rgb(var(--gray));
-	}
-	.social-links a:hover {
-		color: rgb(var(--gray-dark));
-	}
+  footer {
+    grid-area: footer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+    line-height: 1.75;
+  }
 </style>
