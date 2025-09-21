@@ -1,48 +1,51 @@
 /* 
-	THEMING
-	Mode: light/dark is automatically determined by system color scheme.
-	There is no mode toggle.
+    THEMING
+    Mode: light/dark can be toggled manually or automatically determined by system color scheme.
 */
 
 /* ------ THEMING - Light Mode ------ */
 :root {
-	--palette-primary: #4f46e5;
+    --palette-primary: #4f46e5;
 
-	--text: #1e293b;
-	--text-muted: #64748b;
-	--text-heading: #0f172a;
-	--text-link: #2563eb;
+    --text: #1e293b;
+    --text-muted: #64748b;
+    --text-heading: #0f172a;
+    --text-link: #2563eb;
 
-	--code-background: #f6f7f9;
-	--code-text: #47546b;
-	--code-border: #e2e8f0;
+    --code-background: #f6f7f9;
+    --code-text: #47546b;
+    --code-border: #e2e8f0;
 
-	--border: #e2e8f0;
-	--background: #ffffff;
+    --border: #e2e8f0;
+    --background: #ffffff;
 }
 
 /* ------ THEMING - Dark Mode ------ */
+[data-theme="dark"],
 @media (prefers-color-scheme: dark) {
-	:root {
-		--palette-primary: #20bdff;
+    :root:not([data-theme="light"]) {
+        --palette-primary: #20bdff;
 
-		--text: #d2d3d7;
-		--text: #d4d4d8;
-		--text-muted: #d2d3d7;
-		--text-heading: #fafafa;
-		--text-link: #20bdff;
+        --text: #d2d3d7;
+        --text: #d4d4d8;
+        --text-muted: #d2d3d7;
+        --text-heading: #fafafa;
+        --text-link: #20bdff;
 
-		--code-text: #cbd5e0;
-		--code-background: #1f2631;
-		--code-border: #2d3748;
+        --code-text: #cbd5e0;
+        --code-background: #1f2631;
+        --code-border: #2d3748;
 
-		--border: #2d3748;
-		--background: #18181b;
-	}
+        --border: #2d3748;
+        --background: #18181b;
+    }
+}
 
-	html {
-		color-scheme: dark;
-	}
+[data-theme="dark"] html,
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) html {
+        color-scheme: dark;
+    }
 }
 
 /* ------ GLOBAL STYLES - START ------ */

@@ -2,6 +2,7 @@
 import HeaderLink from "./HeaderLink.astro";
 import GitHubIcon from "../components/ui/icons/github.astro";
 import TwitterIcon from "../components/ui/icons/twitter.astro";
+import ThemeToggle from "./ThemeToggle.astro";
 ---
 
 <header>
@@ -10,12 +11,13 @@ import TwitterIcon from "../components/ui/icons/twitter.astro";
     <section>
       <ul>
         <li><HeaderLink href="/">Home</HeaderLink></li>
-        <li><HeaderLink href="/blog">Blog</HeaderLink></li>
-        <li><HeaderLink href="/projects">Projects</HeaderLink></li>
+        <li><HeaderLink href="/posts">Posts</HeaderLink></li>
+        <li><HeaderLink href="/about">About</HeaderLink></li>
       </ul>
     </section>
   </nav>
   <div class="social-handles">
+    <ThemeToggle />
     <a
       class="centered"
       href="https://github.com/flexdinesh/blogster"
